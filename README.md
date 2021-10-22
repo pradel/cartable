@@ -137,7 +137,7 @@ node ./dist/index.js
 
 ## Inspiration
 
-- [jaredpalmer/backpack](https://github.com/jaredpalmer/backpack) - [jaredpalmer/backpack](https://github.com/jaredpalmer/backpack) - First version of Cartable is a modified version of backpack.
+- [jaredpalmer/backpack](https://github.com/jaredpalmer/backpack) - First version of Cartable is a modified version of backpack.
 - [zeit/next.js](https://github.com/zeit/next.js)
 
 ## License
