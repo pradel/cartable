@@ -35,3 +35,6 @@ jobs:
 
       - name: Build examples
         run: pnpm run build --filter "cartable-example-*"
+
+      - name: Test examples
+        run: pnpm run test --filter "cartable-example-*"

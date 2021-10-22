@@ -2,7 +2,7 @@ import { existsSync } from "fs";
 import { resolve } from "path";
 import webpack from "webpack";
 import { UserConfig } from "./types";
-import { generateWebpackConfig } from "./webpack.config";
+import { generateWebpackConfig } from "./generateWebpackConfig";
 
 export const startBuild = () => {
   const options = {
