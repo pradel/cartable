@@ -1,5 +1,11 @@
 # @cartable/core
 
+## 0.2.0
+
+### Minor Changes
+
+- [#8](https://github.com/pradel/cartable/pull/8) [`e1b0af7`](https://github.com/pradel/cartable/commit/e1b0af701bdffe19cd992c0ff4ec8b98ea894c01) Thanks [@pradel](https://github.com/pradel)! - 🍏🍎 Add `test` command, the test command is using jest and swc internally.
+
 ## 0.1.1
 
 ### Patch Changes
