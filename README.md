@@ -7,13 +7,14 @@
 
 </div>
 
-Cartable aims to provide you the best DX to develop your node.js applications. It's focused on server-only applications. Heavily inspired by [backpack](https://github.com/jaredpalmer/backpack), the idea is a zero-config tool so you don't have to spend hours to configure your project for the tenth time. You can use it for new apps as well as existing ones.
+Cartable aims to provide you the best DX to develop your node.js applications. It's focused on server-only applications. Heavily inspired by [backpack](https://github.com/jaredpalmer/backpack), the idea is a zero-config tool giving you all the tools you need. You can use it for new apps as well as existing ones.
 
 ## Features
 
 - [TypeScript](https://github.com/microsoft/TypeScript) support out of the box
 - Fast, using [swc](https://github.com/swc-project/swc) to transpile the code
 - Great DX, readable error messages, live reloading etc
+- Fast tests with [jest](https://github.com/facebook/jest) and [swc](https://github.com/swc-project/swc)
 - Zero-config, one dependency
 - Easily customizable
 
@@ -23,12 +24,14 @@ Cartable aims to provide you the best DX to develop your node.js applications. I
 - [Usage](#usage)
   - [Using in development](#using-in-development)
   - [Building for Production](#building-for-production)
+  - [Testing your application](#testing-your-application)
 - [Configuration](#configuration)
   - [Customizing webpack config](#customizing-webpack-config)
   - [Customizing swc config](#customizing-swc-config)
 - [Commands](#commands)
   - [`cartable dev`](#cartable-dev)
   - [`cartable build`](#cartable-build)
+  - [`cartable test`](#cartable-test)
 - [Inspiration](#inspiration)
 - [License](#license)
 
@@ -53,7 +56,8 @@ Add the cartable scripts to your package.json like this:
 {
   "scripts": {
     "dev": "cartable",
-    "build": "cartable build"
+    "build": "cartable build",
+    "test": "cartable test"
   }
 }
 ```
@@ -79,6 +83,14 @@ Run the build command and start your app:
 ```bash
 npm run build
 node ./dist/index.js
+```
+
+### Testing your application
+
+Runs your tests using Jest:
+
+```bash
+npm run test
 ```
 
 ## Configuration
@@ -135,10 +147,21 @@ You can run your production application with the following command:
 node ./dist/index.js
 ```
 
+### `cartable test`
+
+Test the app with jest. For better performance, compiling the JavaScript / TypeScript code is done via swc.
+
+You can pass any option to jest, for example to generate coverage:
+
+```sh
+cartable test --coverage
+```
+
 ## Inspiration
 
 - [jaredpalmer/backpack](https://github.com/jaredpalmer/backpack) - First version of Cartable is a modified version of backpack.
 - [zeit/next.js](https://github.com/zeit/next.js)
+- [jaredpalmer/tsdx](https://github.com/jaredpalmer/tsdx)
 
 ## License
 
