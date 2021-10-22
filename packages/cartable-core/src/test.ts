@@ -1,25 +1,30 @@
 import { existsSync } from "fs";
-import { resolve } from "path";
+import { join } from "path";
 import * as jest from "jest";
 import { generateJestConfig } from "./generateJestConfig";
 import { UserConfig } from "./types";
+import { paths } from "./paths";
 
 export const startTest = () => {
-  const configPath = resolve("cartable.config.js");
-  let userConfig: UserConfig = {};
+  const jestConfigPath = join(paths.rootPath, "jest.config.js");
+  const appPackageJson = require(join(paths.rootPath, "package.json"));
 
-  if (existsSync(configPath)) {
-    userConfig = require(configPath);
+  // Allow user to override the jest config
+  let jestConfig = generateJestConfig();
+
+  // Config can come from package.json jest key
+  if (appPackageJson.jest) {
+    jestConfig = {
+      ...jestConfig,
+      ...appPackageJson.jest,
+    };
   }
 
-  // TODO
-  // // Allow user to override the webpack config
-  // let jestConfig = generateJestConfig(options);
-  // if (userConfig.webpack) {
-  //   webpackConfig = userConfig.webpack(webpackConfig);
-  // }
-
-  let jestConfig = generateJestConfig();
+  // Config can also come from a jest config file
+  if (existsSync(jestConfigPath)) {
+    const jestConfigContents = require(jestConfigPath);
+    jestConfig = { ...jestConfig, ...jestConfigContents };
+  }
 
   const argv = process.argv.slice(2);
 
