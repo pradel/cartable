@@ -1,6 +1,7 @@
 import type { Config } from "@jest/types";
 import { existsSync } from "fs";
 import { resolve } from "path";
+import { paths } from "./paths";
 
 export const generateJestConfig = (): Config.InitialOptions => {
   const swcRcPath = resolve(".swcrc");
@@ -35,5 +36,6 @@ export const generateJestConfig = (): Config.InitialOptions => {
       "^.+\\.(t|j)sx?$": swrOptions ? ["@swc/jest", swrOptions] : "@swc/jest",
     },
     moduleFileExtensions: ["ts", "js", "json"],
+    rootDir: paths.rootPath,
   };
 };
