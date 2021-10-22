@@ -34,4 +34,4 @@ jobs:
         run: pnpm run build --filter @cartable/core
 
       - name: Build examples
-        run: pnpm run build --filter "*-example-*"
+        run: pnpm run build --filter "cartable-example-*"

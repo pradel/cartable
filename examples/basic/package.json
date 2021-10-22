@@ -11,6 +11,6 @@
     "fastify": "^3.22.1"
   },
   "devDependencies": {
-    "@cartable/core": "^0.0.1"
+    "@cartable/core": "^0.1.0"
   }
 }
