@@ -34,7 +34,9 @@ export const generateJestConfig = (): Config.InitialOptions => {
     transform: {
       "^.+\\.(t|j)sx?$": swrOptions ? ["@swc/jest", swrOptions] : "@swc/jest",
     },
+    transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
     moduleFileExtensions: ["ts", "js", "json"],
+    collectCoverageFrom: ["src/**/*.{ts,tsx,js,jsx}"],
     rootDir: paths.rootPath,
   };
 };
