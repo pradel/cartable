@@ -13,7 +13,6 @@ export const generateJestConfig = (): Config.InitialOptions => {
 
   if (!hasSwcRc) {
     swrOptions = {
-      sourceMap: true,
       jsc: {
         target: "es2020",
         parser: !useTypeScript
