@@ -80,6 +80,16 @@ importers:
       '@types/webpack-node-externals': 2.5.3_@swc+core@1.2.115
       typescript: 4.5.2
 
+  packages/cartable-create:
+    specifiers:
+      '@cartable/core': ^0.2.0
+      '@types/node': 16.11.11
+      typescript: 4.5.2
+    devDependencies:
+      '@cartable/core': link:../cartable-core
+      '@types/node': 16.11.11
+      typescript: 4.5.2
+
 packages:
 
   /@babel/code-frame/7.16.0:
