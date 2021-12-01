@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "bin": {
-    "@cartable/create": "./bin/index.js"
+    "cartable-create": "./bin/index.js"
   },
   "publishConfig": {
     "access": "public"
@@ -28,7 +28,9 @@
   "repository": "git+https://github.com/pradel/cartable.git",
   "funding": "https://github.com/sponsors/pradel",
   "author": "Léo Pradel",
-  "dependencies": {},
+  "dependencies": {
+    "commander": "8.3.0"
+  },
   "devDependencies": {
     "@cartable/core": "^0.2.0",
     "@types/node": "16.11.11",
