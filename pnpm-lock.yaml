@@ -18,7 +18,7 @@ importers:
 
   examples/basic:
     specifiers:
-      '@cartable/core': ^0.2.0
+      '@cartable/core': ^0.3.0
       fastify: ^3.29.0
     dependencies:
       fastify: 3.29.0
@@ -27,7 +27,7 @@ importers:
 
   examples/basic-typescript:
     specifiers:
-      '@cartable/core': ^0.2.0
+      '@cartable/core': ^0.3.0
       fastify: ^3.29.0
       typescript: 4.6.4
     dependencies:
@@ -38,7 +38,7 @@ importers:
 
   examples/custom-webpack-config:
     specifiers:
-      '@cartable/core': ^0.2.0
+      '@cartable/core': ^0.3.0
       fastify: ^3.29.0
     dependencies:
       fastify: 3.29.0
