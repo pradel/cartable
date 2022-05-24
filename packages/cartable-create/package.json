@@ -1,0 +1,39 @@
+{
+  "name": "@cartable/create",
+  "version": "0.0.0",
+  "license": "MIT",
+  "bin": {
+    "cartable-create": "./bin/index.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "build": "cartable build",
+    "prepare": "pnpm run build"
+  },
+  "keywords": [
+    "node",
+    "zero-config",
+    "typescript",
+    "bundler"
+  ],
+  "repository": "git+https://github.com/pradel/cartable.git",
+  "funding": "https://github.com/sponsors/pradel",
+  "author": "Léo Pradel",
+  "dependencies": {
+    "commander": "8.3.0"
+  },
+  "devDependencies": {
+    "@cartable/core": "^0.2.0",
+    "@types/node": "16.11.11",
+    "typescript": "4.5.2"
+  }
+}
