@@ -7,7 +7,8 @@ import { generateRspackConfig } from "./generateRspackConfig";
 export const startDev = () => {
   const options = {
     env: "development",
-  };
+    command: "dev",
+  } as const;
 
   const configPath = resolve("cartable.config.js");
   let userConfig: UserConfig = {};

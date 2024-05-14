@@ -10,6 +10,7 @@ import { paths } from "./paths";
 
 interface RspackConfigOptions {
   env: "development" | "production" | string;
+  command: "build" | "dev";
 }
 
 export const generateRspackConfig = (
@@ -103,12 +104,13 @@ export const generateRspackConfig = (
     },
 
     plugins: [
-      // TODO only load it when running the dev command
       // Use nodemon to reload the server in development mode when changes are made.
-      new NodemonWebpackPlugin({
-        script: `${paths.serverBuildPath}/index.js`,
-        quiet: true,
-      }),
+      options.command === "build"
+        ? new NodemonWebpackPlugin({
+            script: `${paths.serverBuildPath}/index.js`,
+            quiet: true,
+          })
+        : undefined,
 
       // As swc is only transpiling, ForkTsCheckerWebpackPlugin is responsible for
       // the type checking.
@@ -125,7 +127,6 @@ export const generateRspackConfig = (
       // gives cartable its human-readable error messages.
       new FriendlyErrorsWebpackPlugin({
         clearConsole: options.env === "development",
-        // reporter: consola,
       }),
     ].filter(Boolean) as any,
   };
