@@ -19,6 +19,7 @@ export const startDev = () => {
   // Allow user to override the webpack config
   let webpackConfig = generateWebpackConfig(options);
   if (userConfig.webpack) {
+    // @ts-ignore TODO
     webpackConfig = userConfig.webpack(webpackConfig);
   }
 
