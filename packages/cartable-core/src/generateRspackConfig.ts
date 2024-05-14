@@ -60,6 +60,11 @@ export const generateRspackConfig = (
     externals: [nodeExternals() as any],
     externalsPresets: { node: true },
 
+    node: {
+      __filename: true,
+      __dirname: true,
+    },
+
     entry: {
       main: [`${paths.serverSrcPath}/index.${!useTypeScript ? "js" : "ts"}`],
     },

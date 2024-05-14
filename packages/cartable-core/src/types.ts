@@ -1,5 +1,5 @@
-import webpack from "webpack";
+import { RspackOptions } from "@rspack/core";
 
 export interface UserConfig {
-  webpack?: (config: webpack.Configuration) => webpack.Configuration;
+  rspack?: (config: RspackOptions) => RspackOptions;
 }

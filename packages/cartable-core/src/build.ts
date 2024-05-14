@@ -18,10 +18,9 @@ export const startBuild = () => {
 
   // Allow user to override the webpack config
   let rspackConfig = generateRspackConfig(options);
-  // TODO migrate this to rspack
-  // if (userConfig.webpack) {
-  //   webpackConfig = userConfig.webpack(webpackConfig);
-  // }
+  if (userConfig.rspack) {
+    rspackConfig = userConfig.rspack(rspackConfig);
+  }
 
   rspack(rspackConfig, (err, stats) => {
     if (err || stats?.hasErrors()) {
