@@ -14,7 +14,8 @@
   ],
   "scripts": {
     "dev": "tsc -w",
-    "build": "rm -rf dist && tsc"
+    "build": "rm -rf dist && tsc",
+    "prepublish": "pnpm run build"
   },
   "keywords": [
     "node",
