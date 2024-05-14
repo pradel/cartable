@@ -6,7 +6,7 @@
   "scripts": {
     "format": "prettier --write '**/*' --ignore-unknown",
     "build": "pnpm --filter @cartable/core build",
-    "version": "pnpx changeset version && pnpm install --lockfile-only",
+    "version": "pnpm changeset version && pnpm install --lockfile-only",
     "release": "pnpm run build && pnpm changeset publish",
     "prepare": "husky install"
   },
