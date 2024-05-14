@@ -1,5 +1,11 @@
 # @cartable/core
 
+## 0.3.1
+
+### Patch Changes
+
+- [#15](https://github.com/pradel/cartable/pull/15) [`9d02827`](https://github.com/pradel/cartable/commit/9d02827ba6cefa8ac5afc403ec83ec781fa0b952) Thanks [@pradel](https://github.com/pradel)! - Update tooling.
+
 ## 0.3.0
 
 ### Minor Changes
