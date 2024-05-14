@@ -23,8 +23,11 @@ export const startBuild = () => {
     rspackConfig = userConfig.rspack(rspackConfig);
   }
 
-  rspack(rspackConfig, (err, stats) => {
-    if (err || stats?.hasErrors()) {
+  const serverCompiler = rspack(rspackConfig);
+
+  // Start rspack in watch mode
+  serverCompiler.run((error, stats) => {
+    if (error || stats?.hasErrors()) {
       process.exitCode = 1;
     }
   });
