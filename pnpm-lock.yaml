@@ -72,7 +72,7 @@ importers:
         specifier: 0.6.5
         version: 0.6.5
       '@swc/core':
-        specifier: ^1.2.189
+        specifier: ^1.5.6
         version: 1.5.6
       '@swc/jest':
         specifier: ^0.2.36
@@ -81,7 +81,7 @@ importers:
         specifier: 3.2.3
         version: 3.2.3
       fork-ts-checker-webpack-plugin:
-        specifier: ^9.0.2
+        specifier: 9.0.2
         version: 9.0.2(typescript@5.4.5)(webpack@5.91.0(@swc/core@1.5.6))
       jest:
         specifier: ^29.7.0
@@ -90,13 +90,13 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       nodemon-webpack-plugin:
-        specifier: ^4.8.2
+        specifier: 4.8.2
         version: 4.8.2(webpack@5.91.0(@swc/core@1.5.6))
       swc-loader:
         specifier: ^0.2.6
         version: 0.2.6(@swc/core@1.5.6)(webpack@5.91.0(@swc/core@1.5.6))
       webpack-node-externals:
-        specifier: ^3.0.0
+        specifier: 3.0.0
         version: 3.0.0
     devDependencies:
       '@jest/types':
