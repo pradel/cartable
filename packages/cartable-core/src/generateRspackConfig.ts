@@ -2,6 +2,7 @@ import { RspackOptions, SwcLoaderOptions } from "@rspack/core";
 import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 import nodeExternals from "webpack-node-externals";
+import NodemonWebpackPlugin from "nodemon-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import FriendlyErrorsWebpackPlugin from "@soda/friendly-errors-webpack-plugin";
 import { paths } from "./paths";
@@ -101,26 +102,11 @@ export const generateRspackConfig = (
     },
 
     plugins: [
-      // // Use nodemon to reload the server in development mode when changes are made.
-      // new NodemonWebpackPlugin({
-      //   script: `${paths.serverBuildPath}/index.js`,
-      //   quiet: true,
-      // }),
-
-      // // In order to provide sourcemaps, we automatically insert this at the
-      // // top of each file using the BannerPlugin.
-      // new webpack.BannerPlugin({
-      //   raw: true,
-      //   entryOnly: false,
-      //   banner: `require('${
-      //     // Is source-map-support installed as project dependency, or linked?
-      //     require.resolve("source-map-support").indexOf(process.cwd()) === 0
-      //       ? // If it's resolvable from the project root, it's a project dependency.
-      //         "source-map-support/register"
-      //       : // It's not under the project, it's linked via lerna.
-      //         require.resolve("source-map-support/register")
-      //   }');`,
-      // }),
+      // Use nodemon to reload the server in development mode when changes are made.
+      new NodemonWebpackPlugin({
+        script: `${paths.serverBuildPath}/index.js`,
+        quiet: true,
+      }),
 
       // As swc is only transpiling, ForkTsCheckerWebpackPlugin is responsible for
       // the type checking.

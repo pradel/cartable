@@ -1,8 +1,8 @@
 import { existsSync } from "fs";
 import { resolve } from "path";
-import webpack from "webpack";
+import { rspack } from "@rspack/core";
 import { UserConfig } from "./types";
-import { generateWebpackConfig } from "./generateWebpackConfig";
+import { generateRspackConfig } from "./generateRspackConfig";
 
 export const startDev = () => {
   const options = {
@@ -17,13 +17,12 @@ export const startDev = () => {
   }
 
   // Allow user to override the webpack config
-  let webpackConfig = generateWebpackConfig(options);
-  // TODO
-  // if (userConfig.webpack) {
-  //   webpackConfig = userConfig.webpack(webpackConfig);
-  // }
+  let rspackConfig = generateRspackConfig(options);
+  if (userConfig.rspack) {
+    rspackConfig = userConfig.rspack(rspackConfig);
+  }
 
-  const serverCompiler = webpack(webpackConfig);
+  const serverCompiler = rspack(rspackConfig);
 
   // Start webpack in watch mode
   serverCompiler.watch({}, (error, stats) => {
