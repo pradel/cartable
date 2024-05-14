@@ -4,7 +4,8 @@ import { resolve } from "node:path";
 import nodeExternals from "webpack-node-externals";
 import NodemonWebpackPlugin from "nodemon-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-import FriendlyErrorsWebpackPlugin from "@soda/friendly-errors-webpack-plugin";
+import FriendlyErrorsWebpackPlugin from "@nuxt/friendly-errors-webpack-plugin";
+import { consola } from "consola";
 import { paths } from "./paths";
 
 interface RspackConfigOptions {
@@ -102,6 +103,7 @@ export const generateRspackConfig = (
     },
 
     plugins: [
+      // TODO only load it when running the dev command
       // Use nodemon to reload the server in development mode when changes are made.
       new NodemonWebpackPlugin({
         script: `${paths.serverBuildPath}/index.js`,
@@ -110,12 +112,20 @@ export const generateRspackConfig = (
 
       // As swc is only transpiling, ForkTsCheckerWebpackPlugin is responsible for
       // the type checking.
-      useTypeScript ? new ForkTsCheckerWebpackPlugin() : undefined,
+      useTypeScript
+        ? new ForkTsCheckerWebpackPlugin({
+            logger: {
+              log: consola.info,
+              error: consola.error,
+            },
+          })
+        : undefined,
 
       // The FriendlyErrorsWebpackPlugin (when combined with source-maps)
       // gives cartable its human-readable error messages.
       new FriendlyErrorsWebpackPlugin({
         clearConsole: options.env === "development",
+        // reporter: consola,
       }),
     ].filter(Boolean) as any,
   };

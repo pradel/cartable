@@ -27,11 +27,12 @@
   "funding": "https://github.com/sponsors/pradel",
   "author": "Léo Pradel",
   "dependencies": {
-    "@soda/friendly-errors-webpack-plugin": "^1.8.1",
     "@nuxt/friendly-errors-webpack-plugin": "2.6.0",
     "@rspack/core": "0.6.5",
+    "@soda/friendly-errors-webpack-plugin": "^1.8.1",
     "@swc/core": "^1.2.189",
     "@swc/jest": "^0.2.21",
+    "consola": "3.2.3",
     "fork-ts-checker-webpack-plugin": "^9.0.2",
     "jest": "^28.1.0",
     "nodemon": "^2.0.16",
