@@ -1,4 +1,3 @@
-// @ts-expect-error to be fixed after we migrate to rspack
 import type { Config } from "@jest/types";
 import { existsSync } from "fs";
 import { resolve } from "path";

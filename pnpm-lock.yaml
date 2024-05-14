@@ -43,6 +43,9 @@ importers:
       '@cartable/core':
         specifier: ^0.3.0
         version: 0.3.0(@types/node@17.0.35)(typescript@4.6.4)
+      '@types/node':
+        specifier: ^17.0.35
+        version: 17.0.35
       typescript:
         specifier: 4.6.4
         version: 4.6.4
@@ -93,6 +96,9 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
     devDependencies:
+      '@jest/types':
+        specifier: 27.5.1
+        version: 27.5.1
       '@types/jest':
         specifier: 27.5.1
         version: 27.5.1
@@ -423,6 +429,10 @@ packages:
     resolution: {integrity: sha512-u5dT5di+oFI6hfcLOHGTAfmUxFRrjK+vnaP0kkVow9Md/M7V/MxqQMOz/VV25UZO8pzeA9PjfTpOu6BDuwSPQA==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
 
+  '@jest/types@27.5.1':
+    resolution: {integrity: sha512-Cx46iJ9QpwQTjIdq5VJu2QTMMs3QlEjI0x1QbBP5W1+nMzyc2XmimiRR/CbX9TO0cPTeUlxWMOu8mslYsJ8DEw==}
+    engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
+
   '@jest/types@28.1.3':
     resolution: {integrity: sha512-RyjiyMUZrKz/c+zlMFO1pm70DcIlST8AeWTkoUdZevew44wcNZQHsEVOiCVtgVnlFFD82FPaXycys58cf2muVQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
@@ -640,6 +650,9 @@ packages:
 
   '@types/yargs-parser@21.0.3':
     resolution: {integrity: sha512-I4q9QU9MQv4oEOz4tAHJtNz1cwuLxn2F3xcc2iV5WdqLPpUnj30aUuxt1mAxYTG+oe8CZMV/+6rU4S4gRDzqtQ==}
+
+  '@types/yargs@16.0.9':
+    resolution: {integrity: sha512-tHhzvkFXZQeTECenFoRljLBYPZJ7jAVxqqtEI0qTLOmuultnFp4I9yKE17vTuhf7BkhCu7I4XuemPgikDVuYqA==}
 
   '@types/yargs@17.0.32':
     resolution: {integrity: sha512-xQ67Yc/laOG5uMfX/093MRlGGCIBzZMarVa+gfNKJxWAIgykYpVGkBdbqEzGDDfCrVUj6Hiff4mTZ5BA6TmAog==}
@@ -3322,6 +3335,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@jest/types@27.5.1':
+    dependencies:
+      '@types/istanbul-lib-coverage': 2.0.6
+      '@types/istanbul-reports': 3.0.4
+      '@types/node': 17.0.35
+      '@types/yargs': 16.0.9
+      chalk: 4.1.2
+
   '@jest/types@28.1.3':
     dependencies:
       '@jest/schemas': 28.1.3
@@ -3554,6 +3575,10 @@ snapshots:
       - webpack-cli
 
   '@types/yargs-parser@21.0.3': {}
+
+  '@types/yargs@16.0.9':
+    dependencies:
+      '@types/yargs-parser': 21.0.3
 
   '@types/yargs@17.0.32':
     dependencies:
