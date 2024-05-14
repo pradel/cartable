@@ -14,17 +14,15 @@ export const generateJestConfig = (): Config.InitialOptions => {
   if (!hasSwcRc) {
     swrOptions = {
       jsc: {
-        target: "es2020",
+        target: "es2022",
         parser: !useTypeScript
           ? {
               syntax: "ecmascript",
               jsx: false,
-              dynamicImport: true,
             }
           : {
               syntax: "typescript",
               tsx: false,
-              dynamicImport: true,
             },
       },
     };

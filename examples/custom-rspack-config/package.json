@@ -1,5 +1,5 @@
 {
-  "name": "cartable-example-custom-webpack-config",
+  "name": "cartable-example-custom-rspack-config",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -8,9 +8,9 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "fastify": "^3.29.0"
+    "fastify": "^4.27.0"
   },
   "devDependencies": {
-    "@cartable/core": "^0.3.0"
+    "@cartable/core": "workspace:*"
   }
 }

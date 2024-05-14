@@ -1,5 +1,5 @@
 module.exports = {
-  webpack: (config) => {
+  rspack: (config) => {
     // Perform customizations to config
     // Important: return the modified config
 

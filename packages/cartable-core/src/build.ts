@@ -1,13 +1,14 @@
 import { existsSync } from "fs";
 import { resolve } from "path";
-import webpack from "webpack";
+import { rspack } from "@rspack/core";
 import { UserConfig } from "./types";
-import { generateWebpackConfig } from "./generateWebpackConfig";
+import { generateRspackConfig } from "./generateRspackConfig";
 
 export const startBuild = () => {
   const options = {
     env: "production",
-  };
+    command: "build",
+  } as const;
 
   const configPath = resolve("cartable.config.js");
   let userConfig: UserConfig = {};
@@ -16,17 +17,14 @@ export const startBuild = () => {
     userConfig = require(configPath);
   }
 
-  // Allow user to override the webpack config
-  let webpackConfig = generateWebpackConfig(options);
-  if (userConfig.webpack) {
-    webpackConfig = userConfig.webpack(webpackConfig);
+  // Allow user to override the rspack config
+  let rspackConfig = generateRspackConfig(options);
+  if (userConfig.rspack) {
+    rspackConfig = userConfig.rspack(rspackConfig);
   }
 
-  const serverCompiler = webpack(webpackConfig);
-
-  // Start webpack in watch mode
-  serverCompiler.run((error, stats) => {
-    if (error || stats?.hasErrors()) {
+  rspack(rspackConfig, (err, stats) => {
+    if (err || stats?.hasErrors()) {
       process.exitCode = 1;
     }
   });

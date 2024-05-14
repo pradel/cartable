@@ -2,7 +2,6 @@ import { existsSync } from "fs";
 import { join } from "path";
 import * as jest from "jest";
 import { generateJestConfig } from "./generateJestConfig";
-import { UserConfig } from "./types";
 import { paths } from "./paths";
 
 export const startTest = () => {

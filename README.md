@@ -12,7 +12,7 @@ Cartable aims to provide you the best DX to develop your node.js applications. I
 ## Features
 
 - [TypeScript](https://github.com/microsoft/TypeScript) support out of the box
-- Fast, using [swc](https://github.com/swc-project/swc) to transpile the code
+- Fast, using [rspack](https://www.rspack.dev/) and [swc](https://github.com/swc-project/swc)
 - Great DX, readable error messages, live reloading etc
 - Fast tests with [jest](https://github.com/facebook/jest) and [swc](https://github.com/swc-project/swc)
 - Zero-config, one dependency
@@ -26,7 +26,7 @@ Cartable aims to provide you the best DX to develop your node.js applications. I
   - [Building for Production](#building-for-production)
   - [Testing your application](#testing-your-application)
 - [Configuration](#configuration)
-  - [Customizing webpack config](#customizing-webpack-config)
+  - [Customizing rspack config](#customizing-rspack-config)
   - [Customizing swc config](#customizing-swc-config)
 - [Commands](#commands)
   - [`cartable dev`](#cartable-dev)
@@ -95,14 +95,14 @@ npm run test
 
 ## Configuration
 
-### Customizing webpack config
+### Customizing rspack config
 
-To extend webpack, you can define a function that extends its config via `cartable.config.js`.
+To extend rspack, you can define a function that extends its config via `cartable.config.js`.
 
 ```js
 // cartable.config.js
 module.exports = {
-  webpack: (config) => {
+  rspack: (config) => {
     // Perform customizations to config
     // Important: return the modified config
     return config;
