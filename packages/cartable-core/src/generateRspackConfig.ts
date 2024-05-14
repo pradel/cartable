@@ -88,7 +88,7 @@ export const generateRspackConfig = (
       extensions: [".ts", ".js"],
     },
 
-    // Define a few default Webpack loaders.
+    // Define a few default rspack loaders.
     module: {
       rules: [
         // Process JS/TS files with swc
@@ -123,7 +123,7 @@ export const generateRspackConfig = (
           })
         : undefined,
 
-      // The FriendlyErrorsWebpackPlugin (when combined with source-maps)
+      // The FriendlyErrorsWebpackPlugin
       // gives cartable its human-readable error messages.
       new FriendlyErrorsWebpackPlugin({
         clearConsole: options.env === "development",

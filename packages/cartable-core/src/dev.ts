@@ -17,7 +17,7 @@ export const startDev = () => {
     userConfig = require(configPath);
   }
 
-  // Allow user to override the webpack config
+  // Allow user to override the rspack config
   let rspackConfig = generateRspackConfig(options);
   if (userConfig.rspack) {
     rspackConfig = userConfig.rspack(rspackConfig);
@@ -25,7 +25,7 @@ export const startDev = () => {
 
   const serverCompiler = rspack(rspackConfig);
 
-  // Start webpack in watch mode
+  // Start rspack in watch mode
   serverCompiler.watch({}, (error, stats) => {
     if (error || stats?.hasErrors()) {
       process.exitCode = 1;

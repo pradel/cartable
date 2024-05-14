@@ -17,7 +17,7 @@ export const startBuild = () => {
     userConfig = require(configPath);
   }
 
-  // Allow user to override the webpack config
+  // Allow user to override the rspack config
   let rspackConfig = generateRspackConfig(options);
   if (userConfig.rspack) {
     rspackConfig = userConfig.rspack(rspackConfig);
