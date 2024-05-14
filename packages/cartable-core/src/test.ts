@@ -32,7 +32,7 @@ export const startTest = () => {
     "--config",
     JSON.stringify({
       ...jestConfig,
-    })
+    }),
   );
 
   const [, ...argsToPassToJestCli] = argv;
