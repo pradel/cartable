@@ -12,7 +12,7 @@ interface generateWebpackConfigOptions {
 }
 
 export const generateWebpackConfig = (
-  options: generateWebpackConfigOptions
+  options: generateWebpackConfigOptions,
 ): webpack.Configuration => {
   const swcRcPath = resolve(".swcrc");
   const hasSwcRc = existsSync(swcRcPath);
