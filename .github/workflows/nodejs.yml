@@ -11,26 +11,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 6.23.1
+      - uses: pnpm/action-setup@v4
 
-      - name: Use Node.js 16
-        uses: actions/setup-node@v2
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
         with:
-          node-version: 16.x
+          node-version: 20.x
           cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Build @cartable/core
-        run: pnpm run build --filter @cartable/core
+        run: pnpm --filter @cartable/core build
 
       - name: Build examples
-        run: pnpm run build --filter "cartable-example-*"
+        run: pnpm --filter "cartable-example-*" build
 
       - name: Test examples
-        run: pnpm run test --filter "cartable-example-*"
+        run: pnpm --filter "cartable-example-*" test
