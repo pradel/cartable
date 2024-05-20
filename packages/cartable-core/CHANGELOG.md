@@ -1,5 +1,11 @@
 # @cartable/core
 
+## 0.4.0
+
+### Minor Changes
+
+- [#17](https://github.com/pradel/cartable/pull/17) [`67df929`](https://github.com/pradel/cartable/commit/67df9291c6e7d78c9d29739394d3c864fd128e6e) Thanks [@pradel](https://github.com/pradel)! - Migrate from webpack to rspack.
+
 ## 0.3.1
 
 ### Patch Changes
